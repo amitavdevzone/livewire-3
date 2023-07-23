@@ -115,6 +115,7 @@
                                 </p>
                                 <p>
                                     <livewire:counter />
+                                    <livewire:Todo.TodoList />
                                 </p>
                             </div>
                         </div>
