@@ -1,5 +1,5 @@
 <div>
-    <h1>Conuter {{ $count }}</h1>
+    <h1>Counter for {{ $user->name }} {{ $count }}</h1>
 
     <button wire:click="increment">Add</button>
     <button wire:click="decrement">Subtract</button>
