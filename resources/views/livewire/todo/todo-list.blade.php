@@ -5,7 +5,7 @@
 
     @foreach($todos as $todo)
         <div wire:key="{{ $todo['id'] }}">
-            <livewire:Todo.TodoItem :name="$todo['task']" />
+            <livewire:Todo.TodoItem :todo="$todo" />
         </div>
     @endforeach
 
