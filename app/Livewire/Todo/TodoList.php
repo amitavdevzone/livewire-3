@@ -8,18 +8,17 @@ use Livewire\Component;
 class TodoList extends Component
 {
     public $title = '';
-    public $body = '';
     public $todos = [];
 
     public function handleSubmit()
     {
         Todo::create(['task' => $this->title]);
         $this->reset('title');
+        return redirect()->to('/todos');
     }
 
     public function mount()
     {
-        $this->title = 'From mount';
         $this->todos = Todo::all()->toArray();
     }
 

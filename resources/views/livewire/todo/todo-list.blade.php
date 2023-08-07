@@ -1,19 +1,28 @@
 <div>
-    {{-- Because she competes with no one, no one can compete with her. --}}
-    <h1>{{ $title }}</h1>
-    <p>{{ $body }}</p>
-
-    @foreach($todos as $todo)
-        <div wire:key="{{ $todo['id'] }}">
-            <livewire:Todo.TodoItem :todo="$todo" />
+    <div class="row mb-3 mt-3">
+        <div class="col">
+            <h1>My todos</h1>
         </div>
-    @endforeach
+    </div>
 
-    <form wire:submit="handleSubmit">
-        <label for="title">Title is {{$title}}</label>
-        <br>
-        <input type="text" id="title" wire:model="title" />
-    </form>
+    <div class="row mb-5">
+        <div class="col">
+            <form wire:submit="handleSubmit">
+                <div class="mb-3">
+                    <input class="form-control" type="text" id="title" placeholder="Enter your task here" wire:model="title" />
+                </div>
+                <button type="submit" class="btn btn-primary">Add</button>
+            </form>
+        </div>
+    </div>
 
-    <hr>
+    <div class="col">
+        <div class="row">
+            <ul class="list-group">
+                @foreach($todos as $todo)
+                    <livewire:Todo.TodoItem :todo="$todo" wire:key="{{ $todo['id'] }}" />
+                @endforeach
+            </ul>
+        </div>
+    </div>
 </div>

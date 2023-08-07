@@ -20,9 +20,9 @@ class TodoItem extends Component
     public function render()
     {
         return <<<'HTML'
-        <div>
+        <li class="list-group-item">
             {{ $task }} - {{ $is_complete }}
-        </div>
+        </li>
         HTML;
     }
 }
