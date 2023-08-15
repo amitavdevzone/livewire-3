@@ -7,15 +7,7 @@ use Livewire\Component;
 
 class TodoList extends Component
 {
-    public $title = '';
     public $todos = [];
-
-    public function handleSubmit()
-    {
-        Todo::create(['task' => $this->title]);
-        $this->reset('title');
-        return redirect()->to('/todos');
-    }
 
     public function mount()
     {
