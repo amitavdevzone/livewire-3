@@ -2,6 +2,7 @@
 
 use App\Livewire\Counter;
 use App\Livewire\CustomerAdd;
+use App\Livewire\EventPage;
 use App\Livewire\Todo\TodoList;
 use App\Livewire\TodoView;
 use Illuminate\Support\Facades\Route;
@@ -26,3 +27,4 @@ Route::get('/todos', TodoList::class);
 Route::get('/todo/{todo}', TodoView::class)->name('todo.view');
 Route::get('/customer/create', CustomerAdd::class);
 Route::get('/customer/{customer}', CustomerAdd::class);
+Route::get('/events', EventPage::class);
