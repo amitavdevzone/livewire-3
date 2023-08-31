@@ -6,7 +6,7 @@
     <form wire:submit="save">
         <div class="mb-3">
             <label for="name">Name</label>
-            <input class="form-control" type="text" name="form.name" id="name" wire:model="form.name" />
+            <input class="form-control" type="text" name="form.name" id="name" wire:model.blur="form.name" />
             @error('form.name') <span class="error">{{ $message }}</span> @enderror
         </div>
 
@@ -42,11 +42,14 @@
 
         <div class="mb-3">
             <label for="age">Notes</label>
-            <textarea class="form-control" name="form.notes" id="notes" rows="10" wire:model="form.notes"></textarea>
+            <textarea class="form-control" name="form.notes" id="notes" rows="10" wire:model.blur="form.notes"></textarea>
         </div>
 
         <div class="mb-3">
-            <input type="submit" value="Submit" class="btn btn-success" />
+            <button type="submit" class="btn btn-success">
+                Save
+                <div wire:loading>...</div>
+            </button>
         </div>
     </form>
 </div>

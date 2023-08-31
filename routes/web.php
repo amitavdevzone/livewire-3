@@ -25,3 +25,4 @@ Route::get('/counter/{user}', Counter::class);
 Route::get('/todos', TodoList::class);
 Route::get('/todo/{todo}', TodoView::class)->name('todo.view');
 Route::get('/customer/create', CustomerAdd::class);
+Route::get('/customer/{customer}', CustomerAdd::class);
