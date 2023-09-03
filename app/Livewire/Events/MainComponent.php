@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Events;
 
+use Exception;
 use Livewire\Component;
 
 class MainComponent extends Component
@@ -11,6 +12,27 @@ class MainComponent extends Component
     public function save()
     {
         $this->dispatch('got-name', $this->name);
+    }
+
+    public function updating($property, $value)
+    {
+        if ($value === 'bad') {
+            throw new Exception('You cannot use this value');
+        }
+    }
+
+    public function updated($property)
+    {
+        // if ($property === 'name') {
+        //     $this->name = strtoupper($this->name);
+        //     $this->name = $this->name . ' alter';
+        // }
+    }
+
+    public function updatedName()
+    {
+        $this->name = strtoupper($this->name);
+        $this->name = $this->name . ' alter specific';
     }
 
     public function render()

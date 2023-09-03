@@ -1,7 +1,6 @@
 <div>
 <livewire:events.main-component />
     <hr>
-    <livewire:events.independent />
     <div x-on:got-name.window="alert('Hi')">
         <p>A different div</p>
     </div>
@@ -19,5 +18,10 @@
         @foreach($names as $name)
             <button wire:click="sendToThird">{{ $name }}</button>
         @endforeach
+    </div>
+
+    <div>
+        {{ $count }}
+        <button wire:click="increment">Add</button>
     </div>
 </div>
